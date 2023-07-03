@@ -10,6 +10,7 @@ import { Module2Module } from './module2/module2.module';
 import { FormsModule } from '@angular/forms';
 import { InterpolationComponent } from './ONE_WAY_BINDING/interpolation/interpolation.component';
 import { ProperybindingComponent } from './ONE_WAY_BINDING/properybinding/properybinding.component';
+import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbinding.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProperybindingComponent } from './ONE_WAY_BINDING/properybinding/proper
     Comp2shivComponent,
     InterpolationComponent,
     ProperybindingComponent,
+    EventbindingComponent,
     ],
   imports: [
     BrowserModule,
