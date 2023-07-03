@@ -1,2 +1,11 @@
 <h1 class="text text-primary text-center">Event Binding</h1>
 <button (click)="clickbtn()" class="btn btn-dark btn-lg">Click Event</button>
+<h3 class="text text-dark">keyUp event</h3>
+<div class="col mt-3">
+<input type="text" #inputkeyup (keyup)="getData(inputkeyup.value)" class="form-control" placeholder="keyup event">
+<button class="btn btn-primary" (click)="getinputdata()">keyUpeven button</button>
+</div>
+<div class="col mt-3">
+<h3 class="text text-dark">blurEvent</h3>
+<input type="text" #blurevent (blur)="getBlur(blurevent.value)" class="form-control">
+</div>

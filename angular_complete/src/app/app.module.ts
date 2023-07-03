@@ -12,6 +12,7 @@ import { InterpolationComponent } from './ONE_WAY_BINDING/interpolation/interpol
 import { ProperybindingComponent } from './ONE_WAY_BINDING/properybinding/properybinding.component';
 import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbinding.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbindi
     InterpolationComponent,
     ProperybindingComponent,
     EventbindingComponent,
+ 
     ],
   imports: [
     BrowserModule,
