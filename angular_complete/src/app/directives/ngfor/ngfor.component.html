@@ -1,1 +1,17 @@
-<p>ngfor works!</p>
+<h1 class="text text-danger mt-5"> This is *ngFor</h1>
+<table class="table" *ngFor="let x of person">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+     <tr>
+        <td>{{x.name}}</td>
+        <td>{{x.address}}</td> 
+        <td>{{x.age}}</td>
+     </tr>
+    </tbody>
+  </table>
