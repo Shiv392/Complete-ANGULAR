@@ -1,0 +1,15 @@
+<h1 class="text text-dark">This is : *ngSwitch</h1>
+<div class="container" [ngSwitch]="color">
+<h1 class="text text-danger" *ngSwitchCase="'red'">You Choosed Red Color</h1>
+<h1 class="text text-primary" *ngSwitchCase="'blue'">You Choosed Blue Color</h1>
+<h1 class="text text-success" *ngSwitchCase="'green'">You Choosed Green Color</h1>
+<h1 class="text text-secondary" *ngSwitchCase="'grey'">You Choosed Grey Color</h1>
+<form action="" class="form">
+    <select class="form-select" #selectcolor (change)="selectChange(selectcolor.value)">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="grey">Grey</option>
+   </select>
+</form>
+</div>

@@ -1,2 +1,5 @@
-<h1 *ngIf="flag" class="text text-dark">THIS IS *ngIF</h1> 
+<h1 *ngIf="flag else elseblock" class="text text-dark">THIS IS *ngIF</h1> 
 <button (click)="hideele()" class="btn btn-primary">Hide text</button>
+<ng-template #elseblock>
+<h1 class="text text-primary">This is else block</h1>
+</ng-template>

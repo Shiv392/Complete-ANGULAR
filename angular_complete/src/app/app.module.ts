@@ -14,6 +14,7 @@ import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbindi
 import { TwowaybindingComponent } from './TWO_WAY_BINDING/twowaybinding/twowaybinding.component';
 import { NgifComponent } from './directives/ngif/ngif.component';
 import { NgforComponent } from './directives/ngfor/ngfor.component';
+import { NgswitchComponent } from './directives/ngswitch/ngswitch.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NgforComponent } from './directives/ngfor/ngfor.component';
     TwowaybindingComponent,
     NgifComponent,
     NgforComponent,
+    NgswitchComponent,
  
     ],
   imports: [
