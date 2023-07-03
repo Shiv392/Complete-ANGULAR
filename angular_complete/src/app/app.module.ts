@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { InterpolationComponent } from './ONE_WAY_BINDING/interpolation/interpolation.component';
 import { ProperybindingComponent } from './ONE_WAY_BINDING/properybinding/properybinding.component';
 import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbinding.component';
+import { TwowaybindingComponent } from './TWO_WAY_BINDING/twowaybinding/twowaybinding.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbindi
     InterpolationComponent,
     ProperybindingComponent,
     EventbindingComponent,
+    TwowaybindingComponent,
  
     ],
   imports: [
