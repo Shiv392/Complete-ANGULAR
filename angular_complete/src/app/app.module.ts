@@ -12,6 +12,8 @@ import { InterpolationComponent } from './ONE_WAY_BINDING/interpolation/interpol
 import { ProperybindingComponent } from './ONE_WAY_BINDING/properybinding/properybinding.component';
 import { EventbindingComponent } from './ONE_WAY_BINDING/eventbinding/eventbinding.component';
 import { TwowaybindingComponent } from './TWO_WAY_BINDING/twowaybinding/twowaybinding.component';
+import { NgifComponent } from './directives/ngif/ngif.component';
+import { NgforComponent } from './directives/ngfor/ngfor.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { TwowaybindingComponent } from './TWO_WAY_BINDING/twowaybinding/twowaybi
     ProperybindingComponent,
     EventbindingComponent,
     TwowaybindingComponent,
+    NgifComponent,
+    NgforComponent,
  
     ],
   imports: [
