@@ -17,6 +17,7 @@ import { NgforComponent } from './directives/ngfor/ngfor.component';
 import { NgswitchComponent } from './directives/ngswitch/ngswitch.component';
 import { CustomDirective } from './directives/custom.directive';
 import { CustomdirectiveusingComponent } from './directives/customdirectiveusing/customdirectiveusing.component';
+import { TemplateRefComponent } from './template-ref/template-ref.component';
 
 
 
@@ -34,6 +35,7 @@ import { CustomdirectiveusingComponent } from './directives/customdirectiveusing
     NgswitchComponent,
     CustomDirective,
     CustomdirectiveusingComponent,
+    TemplateRefComponent,
   ],
   imports: [
     BrowserModule,
