@@ -18,6 +18,9 @@ import { NgswitchComponent } from './directives/ngswitch/ngswitch.component';
 import { CustomDirective } from './directives/custom.directive';
 import { CustomdirectiveusingComponent } from './directives/customdirectiveusing/customdirectiveusing.component';
 import { TemplateRefComponent } from './template-ref/template-ref.component';
+import { PipeComponent } from './PIPE/pipe/pipe.component';
+import { CustompipeComponent } from './PIPE/custompipe/custompipe.component';
+
 
 
 
@@ -36,6 +39,9 @@ import { TemplateRefComponent } from './template-ref/template-ref.component';
     CustomDirective,
     CustomdirectiveusingComponent,
     TemplateRefComponent,
+    PipeComponent,
+    CustompipeComponent,
+    
   ],
   imports: [
     BrowserModule,
