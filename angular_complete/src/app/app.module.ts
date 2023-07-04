@@ -15,6 +15,9 @@ import { TwowaybindingComponent } from './TWO_WAY_BINDING/twowaybinding/twowaybi
 import { NgifComponent } from './directives/ngif/ngif.component';
 import { NgforComponent } from './directives/ngfor/ngfor.component';
 import { NgswitchComponent } from './directives/ngswitch/ngswitch.component';
+import { CustomDirective } from './directives/custom.directive';
+import { CustomdirectiveusingComponent } from './directives/customdirectiveusing/customdirectiveusing.component';
+
 
 
 @NgModule({
@@ -29,8 +32,9 @@ import { NgswitchComponent } from './directives/ngswitch/ngswitch.component';
     NgifComponent,
     NgforComponent,
     NgswitchComponent,
- 
-    ],
+    CustomDirective,
+    CustomdirectiveusingComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
