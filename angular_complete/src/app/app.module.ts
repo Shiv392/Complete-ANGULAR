@@ -19,7 +19,8 @@ import { CustomDirective } from './directives/custom.directive';
 import { CustomdirectiveusingComponent } from './directives/customdirectiveusing/customdirectiveusing.component';
 import { TemplateRefComponent } from './template-ref/template-ref.component';
 import { PipeComponent } from './PIPE/pipe/pipe.component';
-import { CustompipeComponent } from './PIPE/custompipe/custompipe.component';
+import { CustomPipePipe } from './PIPE/custompipe/customPipe.pipe';
+import { CustomComponent } from './PIPE/custompipe/custom/custom.component';
 
 
 
@@ -40,7 +41,8 @@ import { CustompipeComponent } from './PIPE/custompipe/custompipe.component';
     CustomdirectiveusingComponent,
     TemplateRefComponent,
     PipeComponent,
-    CustompipeComponent,
+    CustomPipePipe,
+    CustomComponent
     
   ],
   imports: [
