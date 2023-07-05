@@ -21,7 +21,9 @@ import { TemplateRefComponent } from './template-ref/template-ref.component';
 import { PipeComponent } from './PIPE/pipe/pipe.component';
 import { CustomPipePipe } from './PIPE/custompipe/customPipe.pipe';
 import { CustomComponent } from './PIPE/custompipe/custom/custom.component';
-
+import { ReactiveComponent } from './FORMS/reactive/reactive.component';
+import { CrudComponent } from './crud/crud.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,13 +44,17 @@ import { CustomComponent } from './PIPE/custompipe/custom/custom.component';
     TemplateRefComponent,
     PipeComponent,
     CustomPipePipe,
-    CustomComponent
+    CustomComponent,
+  
+    ReactiveComponent,
+    CrudComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-  CommonModule,Module1Module,Module2Module,FormsModule
+  CommonModule,Module1Module,Module2Module,FormsModule,
+  ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
