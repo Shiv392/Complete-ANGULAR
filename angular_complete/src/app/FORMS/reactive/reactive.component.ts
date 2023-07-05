@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
@@ -38,5 +38,21 @@ onSubmit(){
 }
 submitProfile2(){
     console.log(this.profile2.value);
+}
+
+public validationform= new FormGroup({
+  email:new FormControl(null,[Validators.required,Validators.email]),
+  password: new FormControl(null,[Validators.required,Validators.min(6)]),
+  password2: new FormControl(null,[Validators.required])
+})
+comparePassword(){
+  
+}
+validationformsubmit(){
+  console.log(this.validationform.value);
+  
+}
+get email(){
+  return this.validationform.get('user')
 }
 }
