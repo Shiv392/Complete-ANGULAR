@@ -1,3 +1,4 @@
+<h1 class="text text-primary">Reactive Form</h1>
 <form action="" class="form">
 <div class="col m-3">
     <label for="name" class="form-label">Name:</label>
@@ -8,4 +9,24 @@
 <input type="password" id="password " [formControl]="password" class="form-control">
 </div>
 <button (click)="login()" class="btn btn-secondary">Click</button>
+</form>
+<h1 class="text text-primary">Form Group</h1>
+<form action="" class="form" [formGroup]="profile" (ngSubmit)="onSubmit()">
+<div class="m-3">
+    <label for="firstname" class="form-label">FirstName:</label>
+    <input type="text" formControlName="firstname" class="form-control" required>
+</div>
+<div class="m-3">
+<label for="lastname" class="form-label">LastName:</label>
+<input type="text" formControlName="lastname" class="form-control" required>
+</div>
+<div class="m-3">
+<label for="age" class="form-label">Age:</label>
+<input type="number" formControlName="age" required class="form-control">
+</div>
+<div class="m-3">
+<label for="address" class="form-label">Address:</label>
+<input type="text" formControlName="address" class="form-control">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
 </form>
