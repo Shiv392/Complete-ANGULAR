@@ -21,8 +21,22 @@ profile=new FormGroup({
   age:new FormControl(18),
   address:new FormControl('Raipur')
 })
+profile2=new FormGroup({
+  name:new FormControl(''),
+  emailid: new FormControl(''),
+  mobileNo : new FormControl(''),
+  address2:new FormGroup({
+    street:new FormControl(''),
+    city:new FormControl(''),
+    state:new FormControl(''),
+    zipCode:new FormControl('')
+  })
+  })
 onSubmit(){
   console.log(this.profile.value);
   
+}
+submitProfile2(){
+    console.log(this.profile2.value);
 }
 }
