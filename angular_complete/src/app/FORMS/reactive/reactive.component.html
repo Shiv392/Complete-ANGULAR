@@ -62,3 +62,23 @@
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<h1 class="text text-primary">Validation in Reactive form</h1>
+<form action="" class="form" [formGroup]="validationform" (ngSubmit)="validationformsubmit()">
+<div class="col m-3">
+<label for="email" class="form-label">Enter Email</label>
+<input type="email" formControlName="email" class="form-control">
+<!-- <span *ngIf="validationform.get('email')?.invalid" class="text text-danger">Email is required</span> -->
+<span *ngIf="validationform.get('email')?.untouched" class="text text-danger">Enter Password</span>
+</div>
+<div class="col m-3">
+<label for="password" class="form-label">Enter Password</label>
+<input type="password" id="password" formControlName="password" class="form-control">
+<span *ngIf="validationform.get('password')?.invalid" class="text text-danger">Password is required</span>
+</div>
+<div class="col m-3">
+<label for="password2" class="form-label">Re-Enter Password</label>
+<input type="password" id="password2" formControlName="password2" class="form-control">
+</div>
+<button type="submit"  class="btn btn-dark">Login</button>
+</form>

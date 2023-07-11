@@ -1,69 +1,74 @@
-<h1>User List</h1>
 
-<form>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control"  [(ngModel)]="name" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control"  [(ngModel)]="email" required>
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control"  [(ngModel)]="password" required>
-  </div>{{password}}
-  <button type="submit" class="btn btn-primary" (click)="addUser()">Add User</button>
-</form>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users; let i = index">
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.password }}</td>
-      <td><button type="button" class="btn btn-primary" (click)="editUser(i)" data-toggle="modal" data-target="#editModal">Edit</button></td>
-      <td><button type="button" class="btn btn-danger" (click)="deleteUser(i)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">Edit User</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="container mt-4">
+   <h1 class="text text-primary">CRUD Application</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" class="form-control" formControlName="name" required>
       </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="editName">Name</label>
-          <input type="text" class="form-control" id="editName" [(ngModel)]="editedUser.name" required>
-        </div>
-        <div class="form-group">
-          <label for="editEmail">Email</label>
-          <input type="email" class="form-control" id="editEmail" [(ngModel)]="editedUser.email" required>
-        </div>
-        <div class="form-group">
-          <label for="editPassword">Password</label>
-          <input type="password" class="form-control" id="editPassword" [(ngModel)]="editedUser.password" required>
-        </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" formControlName="email" required>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="saveChanges()" data-dismiss="modal">Save Changes</button>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" formControlName="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add User</button>
+    </form>
+  
+    <h2 class="mt-4">User List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="openEditModal(user)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Edit User Modal -->
+  <div class="modal"  [ngClass]="{ 'd-block': isEditModalOpen }">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeEditModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editForm" (ngSubmit)="onEditSubmit()">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="form-control" formControlName="name" required>
+            </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" class="form-control" formControlName="email" required>
+            </div>
+            <div class="form-group">
+              <label>Password:</label>
+              <input type="password" class="form-control" formControlName="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  

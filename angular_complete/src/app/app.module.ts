@@ -22,8 +22,8 @@ import { PipeComponent } from './PIPE/pipe/pipe.component';
 import { CustomPipePipe } from './PIPE/custompipe/customPipe.pipe';
 import { CustomComponent } from './PIPE/custompipe/custom/custom.component';
 import { ReactiveComponent } from './FORMS/reactive/reactive.component';
-import { CrudComponent } from './crud/crud.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CrudComponent } from './crud/crud.component';
 
 
 
@@ -47,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CustomComponent,
   
     ReactiveComponent,
-    CrudComponent
+       CrudComponent,
+   
     
   ],
   imports: [

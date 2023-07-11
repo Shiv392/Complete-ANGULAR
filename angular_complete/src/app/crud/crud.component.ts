@@ -1,54 +1,71 @@
 import { Component } from '@angular/core';
-interface User {
-  name: string;
-  email: string;
-  password: string;
-}
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-crud',
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.css']
 })
 export class CrudComponent {
-  users: User[] = [
-    { name: 'John Doe', email: 'john@example.com', password: 'password1' },
-    { name: 'Jane Smith', email: 'jane@example.com', password: 'password2' },
-    { name: 'Bob Johnson', email: 'bob@example.com', password: 'password3' },
-  ];
-public name:any;
-public email:any;
-public password:any;
-  newUser: User = { name: '', email: '', password: '' };
-  editedUser: User = { name: '', email: '', password: '' };
-  editedIndex: number = -1;
+  userForm: FormGroup;
+  editForm: FormGroup;
+  users: any[] = [];
+  isEditModalOpen = false;
+  editedUser: any;
 
-  clickSubmit(e:any){
-    console.log(e);
-  }
-  addUser() {
-  console.log(this.name,this.email,this.password);
-  
-    this.users.push({ name:this.name, email: this.email, password:this.password });
-    // this.newUser = { name: '', email: '', password: '' };
-    console.log(this.users);
-    
+  constructor(private formBuilder: FormBuilder) {
+    this.userForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+
+    this.editForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
   }
 
-
-  editUser(index: number) {
-    this.editedUser = { ...this.users[index] };
-    this.editedIndex = index;
-  }
-
-  saveChanges() {
-    if (this.editedIndex !== -1) {
-      this.users[this.editedIndex] = { ...this.editedUser };
+  onSubmit() {
+    if (this.userForm.valid) {
+      const newUser = {
+        name: this.userForm.value.name,
+        email: this.userForm.value.email,
+        password: this.userForm.value.password
+      };
+      this.users.push(newUser);
+      this.userForm.reset();
     }
-    this.editedUser = { name: '', email: '', password: '' };
-    this.editedIndex = -1;
   }
 
-  deleteUser(index: number) {
-    this.users.splice(index, 1);
+  deleteUser(user: any) {
+    const index = this.users.indexOf(user);
+    if (index !== -1) {
+      this.users.splice(index, 1);
+    }
+  }
+
+  openEditModal(user: any) {
+    this.editedUser = user;
+    this.editForm.patchValue({
+      name: user.name,
+      email: user.email,
+      password: user.password
+    });
+    this.isEditModalOpen = true;
+  }
+
+  onEditSubmit() {
+    if (this.editForm.valid && this.editedUser) {
+      this.editedUser.name = this.editForm.value.name;
+      this.editedUser.email = this.editForm.value.email;
+      this.editedUser.password = this.editForm.value.password;
+      this.isEditModalOpen = false;
+    }
+  }
+
+  closeEditModal() {
+    this.isEditModalOpen = false;
   }
 }
